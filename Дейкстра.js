@@ -1,4 +1,4 @@
-﻿let fs = require('fs');
+let fs = require('fs');
 let arg = process.argv;
 s = fs.readFileSync('string.txt');
 s = s.toString();
@@ -13,7 +13,7 @@ for (i = 0; i <= 9; i++){
 }
 i = 0;
 while (i < s.length){
-	if ((prov.includes(s[i] * 1) == true) || ((s[i] == '-') && (prov.includes(s[i - 1] * 1) == false) && (prov.includes(s[i + 1] * 1) == true))){
+	if ((prov.includes(s[i] * 1) == true) || ((s[i] == '-') && ((s[i - 1] == '(') || (s[i - 1] == undefined)) && (prov.includes(s[i + 1] * 1) == true))){
 		x = '';
 		j = i;
 		while ((prov.includes(s[j] * 1)) || (s[j] == ".") || ((s[j] == '-') && (prov.includes(s[j - 1]) == false) && (prov.includes(s[i + 1] * 1) == true))){
